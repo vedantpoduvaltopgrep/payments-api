@@ -1,0 +1,18 @@
+node_modules/
+.env
+.secrets/
+tmp/
+coverage/
+*.log
+
+# Private key material must never be committed.
+#
+# The files in certs/ are certificates -- public by construction, and committed
+# on purpose so the service can pin its partners. Anything matching the
+# patterns below is a key, and no key belongs in this repository: signing keys
+# live in the KMS and are mounted at /run/secrets/ at pod start.
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
